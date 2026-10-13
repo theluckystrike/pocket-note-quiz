@@ -1,0 +1,38 @@
+.pocket-note-quiz {
+	width: min(580px, 95vw);
+}
+
+.pocket-note-quiz .modal-content > button {
+	min-height: 44px;
+	margin: 6px 8px 6px 0;
+}
+
+.pocket-note-quiz .pnq-progress,
+.pocket-note-quiz .pnq-source {
+	color: var(--text-muted);
+	overflow-wrap: anywhere;
+}
+
+.pocket-note-quiz .pnq-question {
+	font-size: var(--font-ui-large);
+	font-weight: var(--font-semibold);
+	padding: 18px 0;
+	white-space: pre-wrap;
+}
+
+.pocket-note-quiz .pnq-answer {
+	padding: 12px 18px;
+	background: var(--background-secondary);
+	border-radius: var(--radius-m);
+	overflow-wrap: anywhere;
+}
+
+.pocket-note-quiz .pnq-score {
+	font-size: 2em;
+	padding: 24px 0;
+}
+
+.pocket-note-quiz .setting-item {
+	margin-top: 16px;
+	flex-wrap: wrap;
+}
