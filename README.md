@@ -73,6 +73,8 @@ For example, put `What is ATP?` on one line, `Energy carrier` on the next, then 
 
 ## Settings
 
+After a minor or major update, this plugin opens one What's new tab in the background. The tab and settings card suggest other NoteMods plugins and Zovo Chat and link to notemods.com for feedback ([privacy](https://notemods.com/privacy/)). The tab sends no data. Turn the tab off in Settings.
+
 "Question marker" is a literal text match. Change it to `Q:` to use question lines such as `Q: What is ATP`. A blank value returns to `?`. A quiz keeps the marker used when it was loaded. Start a new quiz after you change the marker. The Pro section contains the sponsor, sign-in, refresh, and sign-out controls.
 
 ## FAQ

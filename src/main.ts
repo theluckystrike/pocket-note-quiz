@@ -5,6 +5,8 @@ import { SPONSORS, bindPro, isPro, resetPro } from './pro';
 import { DEFAULT_SETTINGS, PocketNoteQuizSettingTab, normalizeSettings, type PocketNoteQuizSettings } from './settings';
 import { applyMarks, clearMarks, inFolder, parseQuestions, scoreReport, type Card, type Response } from './quiz';
 import { QuizModal } from './modal';
+import { setupHello } from './hello/index';
+import WHATS_NEW from './whats-new.json';
 
 export default class PocketNoteQuizPlugin extends Plugin {
 	settings: PocketNoteQuizSettings = { ...DEFAULT_SETTINGS, presets: [] };
@@ -13,6 +15,8 @@ export default class PocketNoteQuizPlugin extends Plugin {
 	private settingTab: PocketNoteQuizSettingTab | null = null;
 	private stopped = false;
 	async onload(): Promise<void> {
+		// First: "What's new" reads its state before the settings load (packages/hello). It does not wait.
+		setupHello(this, WHATS_NEW);
 		this.stopped = false;
 		await this.loadSettings();
 		const pro = createGitHubSponsors(this.app, this.manifest.id, SPONSORS, this);

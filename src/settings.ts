@@ -2,6 +2,7 @@ import { PluginSettingTab, type SettingDefinitionItem } from 'obsidian';
 import { sponsorsSettingItems } from './license/github-obsidian';
 import { PRO_UI, isPro } from './pro';
 import type PocketNoteQuizPlugin from './main';
+import { helloSettingItems } from './hello/settings';
 
 export interface Preset { name: string; marker: string }
 export interface PocketNoteQuizSettings { marker: string; presets: Preset[] }
@@ -19,6 +20,11 @@ export class PocketNoteQuizSettingTab extends PluginSettingTab {
 		super(app, plugin); this.plugin = plugin;
 	}
 	getSettingDefinitions(): SettingDefinitionItem[] {
+		// The product rows, then the "More from NoteMods" card (packages/hello).
+		return [...this.productSettingDefinitions(), ...helloSettingItems()];
+	}
+
+	productSettingDefinitions(): SettingDefinitionItem[] {
 		return [
 			{ name: 'Question marker', desc: 'A question line contains this text. A blank value uses ?.', control: { type: 'text', key: 'marker', defaultValue: '?' } },
 			...(this.plugin.pro ? sponsorsSettingItems(this.plugin.pro, PRO_UI) : []),
