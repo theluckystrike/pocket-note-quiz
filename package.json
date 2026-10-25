@@ -1,5 +1,6 @@
 {
 	"name": "pocket-note-quiz",
+	"repository": {"type": "git", "url": "theluckystrike/pocket-note-quiz.git"},
 	"version": "1.1.0",
 	"private": true,
 	"description": "Quiz yourself on question lines in the current note and mark each one right or wrong, on phone or desktop.",
