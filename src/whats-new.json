@@ -1,9 +1,9 @@
 {
 	"id": "pocket-note-quiz",
 	"name": "Pocket Note Quiz",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"changes": [
-		"New Send feedback command. It opens a page where you can report a problem or suggest an idea."
+		"The Pocket Note Quiz notice for a Pro feature now has a Sponsor on GitHub button."
 	],
 	"tip": "Run \"Start quiz on current note\" and choose \"Only wrong\" to review the questions you marked wrong.",
 	"thanks": "Hi, I am Michael, a solo developer in Poland. Pocket Note Quiz is one of over 100 small plugins that I make. Thank you for studying with it.",

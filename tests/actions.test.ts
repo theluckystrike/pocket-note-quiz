@@ -7,7 +7,7 @@ import { parseQuestions, type Response } from '../src/quiz';
 afterEach(() => resetPro());
 function manager(enabled: boolean) {
 	const listeners = new Set<() => void>();
-	const m = { isPro: () => enabled, onChange: (fn: () => void) => { listeners.add(fn); return () => listeners.delete(fn); }, set: (v: boolean) => { enabled = v; listeners.forEach((fn) => fn()); } };
+	const m = { isPro: () => enabled, getState: () => ({ status: 'signed-out', lastAttemptAt: 0 }), hasToken: () => false, config: { sponsorLogin: 'theluckystrike' }, onChange: (fn: () => void) => { listeners.add(fn); return () => listeners.delete(fn); }, set: (v: boolean) => { enabled = v; listeners.forEach((fn) => fn()); } };
 	bindPro(m as never); return m;
 }
 function fixture(files: Record<string, string> = { 'Study/a.md': 'A?\na\n\nB?\nb' }) {

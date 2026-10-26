@@ -1,7 +1,7 @@
 import { Notice, Plugin, normalizePath } from 'obsidian';
 import type { SponsorsManager } from './license/index';
 import { createGitHubSponsors } from './license/github-obsidian';
-import { SPONSORS, bindPro, isPro, resetPro } from './pro';
+import { SPONSORS, bindPro, isPro, resetPro, proNotice } from './pro';
 import { DEFAULT_SETTINGS, PocketNoteQuizSettingTab, normalizeSettings, type PocketNoteQuizSettings } from './settings';
 import { applyMarks, clearMarks, inFolder, parseQuestions, scoreReport, type Card, type Response } from './quiz';
 import { QuizModal } from './modal';
@@ -39,7 +39,7 @@ export default class PocketNoteQuizPlugin extends Plugin {
 	}
 	needsPro(): boolean {
 		if (isPro()) return false;
-		new Notice('This is a pro feature. Sponsor on GitHub, then sign in from the plugin settings.'); return true;
+		proNotice('This is a pro feature.'); return true;
 	}
 	async startCurrent(): Promise<void> {
 		const file = this.app.workspace.getActiveFile();
